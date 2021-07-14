@@ -7,7 +7,7 @@ function preload(){
   arrowImage = loadImage("arrow0.png");
   bowImage = loadImage("bow0.png");
   red_balloonImage = loadImage("red_balloon0.png");
-  pink_balloonImage = loadImage("pink_ballon0.png");
+  pink_balloonImage = loadImage("pink_balloon0.png");
   green_balloonImage = loadImage("green_balloon0.png");
   blue_balloonImage = loadImage("blue_balloon0.png");
 
@@ -33,7 +33,7 @@ function setup() {
 function draw() {
  background(0);
   // moving ground
-    scene.velocityX = -3 
+  scene.velocityX = -3 ;
     
     var selectballoon = Math.round(random(1,4));
     
@@ -42,7 +42,7 @@ function draw() {
         redBalloon();
       }
       else if(selectballoon == 2){
-        greeenBalloon();
+        greenBalloon();
       }
       else if(selectballoon == 3){
         blueBalloon();
@@ -52,17 +52,12 @@ function draw() {
       }
     }
 
-    var selectsprites =Math.round(random(1,1));
+    
   
-   if(frameCount %100==0){
-      if(selectsprites == 1){
-       redBalloon();
-    }
    
-   }
-    if (scene.x < 0){
-      scene.x = scene.width/2;
-    }
+   if (scene.x <0){
+    scene.x = scene.width/2;
+  }
   
   //moving bow
   bow.y = World.mouseY
@@ -73,18 +68,7 @@ function draw() {
     
   }
   
-  //creating continous balloons
-  var select_balloon = Math.round(random(1,1));
   
-  if (World.frameCount % 100 == 0) {
-    if (select_balloon == 1) {
-      redBalloon();
-    }
-  }
-  pinkBalloon();
-  greenBalloon();
-  redBalloon();
-  blueBalloon();
   drawSprites();
 }
 
